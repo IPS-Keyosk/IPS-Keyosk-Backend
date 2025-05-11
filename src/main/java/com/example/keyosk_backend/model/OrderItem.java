@@ -18,7 +18,12 @@ public class OrderItem {
     private int orderItemId;
 
     @ManyToOne
+    @JoinColumn(name = "ORDER_ID")
     private Order orderId;
+
+    @ManyToOne
+    @JoinColumn(name = "ITEM_ID")
+    private Item itemId;
 
     private int quantity;
 

@@ -10,19 +10,19 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 @Entity
-public class Drink {
+public class Item {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "DRINK_ID")
-    private int drinkId;
+    @Column(name = "ITEM_ID")
+    private int itemId;
 
-    @ManyToOne
-    private Order orderId;
+    private Enum itemType;
 
-    private String drinkName;
+    private String itemName;
 
-    private int drinkPrice;
+    private int itemPrice;
 
-    private String drinkPhotoUrl;
+    private String itemPhotoUrl;
+
 }

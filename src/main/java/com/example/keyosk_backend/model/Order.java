@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
+@Table(name = "orders")
 @Entity
 public class Order {
 
@@ -18,6 +19,7 @@ public class Order {
     private int orderId;
 
     @ManyToOne
+    @JoinColumn(name = "USER_ID")
     private Member userId;
 
     private int totalPrice;

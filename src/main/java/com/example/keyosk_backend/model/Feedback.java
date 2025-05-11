@@ -18,10 +18,8 @@ public class Feedback {
     private int feedbackId;
 
     @ManyToOne
+    @JoinColumn(name = "USER_ID")
     private Member userId;
-
-    @ManyToOne
-    private Order orderId;
 
     private int rating;
 }
