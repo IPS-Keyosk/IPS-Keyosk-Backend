@@ -1,10 +1,7 @@
 package com.example.keyosk_backend.model;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -17,7 +14,7 @@ public class Item {
     @Column(name = "ITEM_ID")
     private int itemId;
 
-    private Enum itemType;
+    private String itemType;
 
     private String itemName;
 
@@ -25,4 +22,10 @@ public class Item {
 
     private String itemPhotoUrl;
 
+    @Builder
+    public Item(String itemName, int itemPrice, String itemType) {
+        this.itemName = itemName;
+        this.itemPrice = itemPrice;
+        this.itemType = itemType;
+    }
 }
