@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
@@ -16,12 +18,14 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ORDER_ID")
-    private int orderId;
+    private Long orderId;
 
     @ManyToOne
     @JoinColumn(name = "USER_ID")
     private Member userId;
 
     private int totalPrice;
+
+    private LocalDateTime orderTime;
 
 }
