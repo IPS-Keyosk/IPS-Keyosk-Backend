@@ -1,10 +1,7 @@
 package com.example.keyosk_backend.model;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -19,9 +16,17 @@ public class Member {
 
     private String userName;
 
-    private int phoneNum;
+    private String phoneNum;
 
-    private Enum userType;
+    private boolean isDigitalWeak;
 
     private int stampNum;
+
+    @Builder
+    public Member(String userName, String phoneNum, boolean isDigitalWeak, int stampNum) {
+        this.userName = userName;
+        this.phoneNum = phoneNum;
+        this.isDigitalWeak = isDigitalWeak;
+        this.stampNum = stampNum;
+    }
 }
