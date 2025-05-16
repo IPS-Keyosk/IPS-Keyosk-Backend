@@ -12,7 +12,7 @@ public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "USER_ID")
-    private int userId;
+    private Long userId;
 
     private String userName;
 
