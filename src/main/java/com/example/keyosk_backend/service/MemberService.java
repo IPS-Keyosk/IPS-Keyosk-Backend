@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 @Service
+@Slf4j
 public class MemberService {
 
     private final MemberRepository memberRepository;
@@ -18,8 +19,7 @@ public class MemberService {
     public void signUp(MemberRequestDto memberRequestDto) {
         String userName = memberRequestDto.getUserName();
         String phoneNum = memberRequestDto.getPhoneNum();
-        boolean isDigitalWeak = memberRequestDto.isDigitalWeak();
-        int stampNum = 0;
+        Boolean isDigitalWeak = memberRequestDto.getIsDigitalWeak();
 
         Boolean isExist = memberRepository.existsByPhoneNum(phoneNum);
 
@@ -28,7 +28,8 @@ public class MemberService {
             throw new IllegalArgumentException("이미 등록된 사용자입니당");
         }
 
-        Member member = new Member(userName, phoneNum, isDigitalWeak,stampNum+1);
+        Member member = new Member(userName, phoneNum, isDigitalWeak);
+        log.info("isDigitalWeak 값: {}", isDigitalWeak);
         memberRepository.save(member);
     }
 
