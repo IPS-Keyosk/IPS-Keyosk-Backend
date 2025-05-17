@@ -14,7 +14,7 @@ public class MainpageSimpleController {
     }
 
     @GetMapping ("/simple")
-    public Response<SimplePageResponse> getSimplePage() {
-        return Response.success("간단 페이지 메뉴 조회 성공", mainpageSimpleService.getSimplePageMenu());
+    public Response<SimplePageResponse> getSimplePage(@RequestParam String phoneNum) {
+        return mainpageSimpleService.getSimplePageMenu(phoneNum);
     }
 }

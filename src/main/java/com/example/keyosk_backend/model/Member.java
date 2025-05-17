@@ -18,15 +18,13 @@ public class Member {
 
     private String phoneNum;
 
-    private boolean isDigitalWeak;
+    private Boolean isDigitalWeak;
 
-    private int stampNum;
 
     @Builder
-    public Member(String userName, String phoneNum, boolean isDigitalWeak, int stampNum) {
+    public Member(String userName, String phoneNum, Boolean isDigitalWeak) {
         this.userName = userName;
         this.phoneNum = phoneNum;
         this.isDigitalWeak = isDigitalWeak;
-        this.stampNum = stampNum;
     }
 }
