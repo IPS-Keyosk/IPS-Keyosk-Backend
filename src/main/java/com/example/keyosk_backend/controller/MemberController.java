@@ -1,7 +1,7 @@
 package com.example.keyosk_backend.controller;
 
 import com.example.keyosk_backend.dto.request.MemberRequestDto;
-import com.example.keyosk_backend.dto.Response;
+import com.example.keyosk_backend.dto.response.Response;
 import com.example.keyosk_backend.service.MemberService;
 import org.springframework.web.bind.annotation.*;
 

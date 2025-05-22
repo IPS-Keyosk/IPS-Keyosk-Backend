@@ -1,4 +1,4 @@
-package com.example.keyosk_backend.dto;
+package com.example.keyosk_backend.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;

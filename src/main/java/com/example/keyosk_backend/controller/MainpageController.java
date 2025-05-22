@@ -1,7 +1,7 @@
 package com.example.keyosk_backend.controller;
 
 import com.example.keyosk_backend.dto.RecommendedItemDto;
-import com.example.keyosk_backend.dto.Response;
+import com.example.keyosk_backend.dto.response.Response;
 import com.example.keyosk_backend.model.Item;
 import com.example.keyosk_backend.model.Member;
 import com.example.keyosk_backend.repository.MemberRepository;
