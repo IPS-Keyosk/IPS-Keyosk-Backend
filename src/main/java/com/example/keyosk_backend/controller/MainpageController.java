@@ -25,8 +25,8 @@ public class MainpageController {
 
     //추천 메뉴 (기존 고객용)
     @GetMapping("/recommend")
-    public Response<List<RecommendedItemDto>> getRecommend(@RequestParam Long userId) {
-        Member member = memberRepository.findById(userId)
+    public Response<List<RecommendedItemDto>> getRecommend(@RequestParam String phoneNum) {
+        Member member = memberRepository.findByPhoneNum(phoneNum)
                 .orElseThrow(() -> new IllegalArgumentException("해당 사용자가 존재하지 않습니다."));
 
         List<RecommendedItemDto> recommendations = menuService.getRecommendedMenu(member);
