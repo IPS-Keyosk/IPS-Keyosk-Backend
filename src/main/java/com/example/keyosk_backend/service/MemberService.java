@@ -20,6 +20,7 @@ public class MemberService {
         String userName = memberRequestDto.getUserName();
         String phoneNum = memberRequestDto.getPhoneNum();
         Boolean isDigitalWeak = memberRequestDto.getIsDigitalWeak();
+        int stampNum = 0;
 
         Boolean isExist = memberRepository.existsByPhoneNum(phoneNum);
 
@@ -28,7 +29,7 @@ public class MemberService {
             throw new IllegalArgumentException("이미 등록된 사용자입니당");
         }
 
-        Member member = new Member(userName, phoneNum, isDigitalWeak);
+        Member member = new Member(userName, phoneNum, isDigitalWeak, stampNum+1);
         log.info("isDigitalWeak 값: {}", isDigitalWeak);
         memberRepository.save(member);
     }
