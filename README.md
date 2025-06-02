@@ -57,8 +57,11 @@ run KeyoskBackendApplication
 # 3. 프론트엔드 실행
 python app.py
 
+```
+
+---
+
 ## 📷 실행 화면
 ![image](https://github.com/user-attachments/assets/e4260c4d-c3ad-48e6-bf70-437ab409dae2)
 ![image](https://github.com/user-attachments/assets/543848ed-5790-48e1-9389-6badf7665c8e)
-
 
